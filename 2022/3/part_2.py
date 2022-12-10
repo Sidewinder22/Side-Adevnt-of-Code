@@ -19,16 +19,15 @@ with open(file_name) as file:
     lines = file.readlines()
 
 sum = 0
-for line in lines:
-    line = line.rstrip()
-    half_length = int(len(line)/2)
+for i in range(0, len(lines), 3):
+    first = lines[i]
+    second = lines[i + 1]
+    third = lines[i + 2]
 
-    first_half = line[:half_length]
-    second_half = line[half_length:]
-
-    for char in first_half:
-        if second_half.find(char) != -1:
-            sum += calculate_value(char)
-            break
-
+    for char in first:
+        if second.find(char) != -1:
+            if third.find(char) != -1:
+                sum += calculate_value(char)
+                break
+    
 print(f"Sum: {sum}")
