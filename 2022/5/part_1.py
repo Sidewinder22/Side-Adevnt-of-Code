@@ -26,14 +26,9 @@ def read_and_process_commands(stacks):
     for x in range(10, len(lines), 1):
         [amount, src, dest] = [int(word) for word in lines[x].split() if word.isdigit()]
         
-        temp_stack = []
         for i in range(0, amount):
-            temp_stack.append(stacks[src].pop())
-            # stacks[dest].append(element)
-
-        for i in range(0, amount):
-        # for element in temp_stack:
-            stacks[dest].append(temp_stack.pop())
+            element = stacks[src].pop()
+            stacks[dest].append(element)
 
 file_name = "input"
 lines = []
