@@ -1,0 +1,3 @@
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin/2022)
+
+add_subdirectory(7)
