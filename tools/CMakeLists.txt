@@ -2,6 +2,7 @@ set (LIB tools)
 
 set (HEADERS
     include/ReadFile.hpp
+    include/DigitMap.hpp
 )
 
 set (SOURCES

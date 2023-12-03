@@ -1,10 +1,13 @@
 #ifndef ReadFile_H_
 #define ReadFile_H_
 
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <string>
 #include <vector>
+
+namespace tools
+{
 
 class ReadFile
 {
@@ -15,5 +18,7 @@ public:
 private:
     std::string fileName_;
 };
+
+} // namespace tools
 
 #endif // ReadFile_H_

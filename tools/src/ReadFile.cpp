@@ -1,8 +1,12 @@
 #include "ReadFile.hpp"
-    
+
+namespace tools
+{
+
 ReadFile::ReadFile(std::string fileName)
     : fileName_(fileName)
-{ }
+{
+}
 
 std::vector<std::string> ReadFile::read()
 {
@@ -21,3 +25,5 @@ std::vector<std::string> ReadFile::read()
 
     return lines;
 }
+
+} // namespace tools
