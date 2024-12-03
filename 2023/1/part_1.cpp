@@ -2,7 +2,8 @@
 #include <iostream>
 #include <string>
 #include <string_view>
-#include "ReadFile.hpp"
+
+import tools;
 
 int parserLine(std::string_view str)
 {
