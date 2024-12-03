@@ -1,10 +1,9 @@
 #include <cctype>
 #include <iostream>
-#include <map>
 #include <string>
 #include <string_view>
-#include "DigitMap.hpp"
-#include "ReadFile.hpp"
+
+import tools;
 
 int parserLine(std::string_view str)
 {
