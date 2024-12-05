@@ -5,8 +5,6 @@
 #include <stdexcept>
 #include <vector>
 
-import tools;
-
 int main()
 {
     std::vector<int> firstList;
