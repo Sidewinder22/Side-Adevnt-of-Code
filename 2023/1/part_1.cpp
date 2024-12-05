@@ -23,7 +23,7 @@ int parserLine(std::string_view str)
 int main()
 {
     auto reader = tools::ReadFile("../2023/1/input");
-    auto lines  = reader.read();
+    auto lines  = reader.readLines();
 
     int sum = 0;
     for (auto&& l : lines)

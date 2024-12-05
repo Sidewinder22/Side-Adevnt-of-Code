@@ -13,28 +13,32 @@ export class ReadFile
 {
 public:
     ReadFile(std::string fileName);
-    std::vector<std::string> read();
+    ~ReadFile();
+
+    std::vector<std::string> readLines();
 
 private:
-    std::string fileName_;
+    std::ifstream file_;
 };
 
 ReadFile::ReadFile(std::string fileName)
-    : fileName_(fileName)
+    : file_(fileName)
 {
+    if (!file_.is_open())
+    {
+        throw std::runtime_error("Can't open file: " + fileName + "!");
+    }
 }
 
-std::vector<std::string> ReadFile::read()
+ReadFile::~ReadFile()
 {
-    std::ifstream file(fileName_);
+    file_.close();
+}
 
-    if (!file.is_open())
-    {
-        throw std::runtime_error("Can't open file: " + fileName_);
-    }
-
+std::vector<std::string> ReadFile::readLines()
+{
     std::vector<std::string> lines;
-    for (std::string line; std::getline(file, line);)
+    for (std::string line; std::getline(file_, line);)
     {
         lines.push_back(line);
     }
