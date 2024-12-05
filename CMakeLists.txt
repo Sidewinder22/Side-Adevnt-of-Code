@@ -8,3 +8,4 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic")
 
 add_subdirectory(tools)
 add_subdirectory(2023)
+add_subdirectory(2024)

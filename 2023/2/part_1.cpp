@@ -89,7 +89,7 @@ int main()
 {
     int  sum    = 0;
     auto reader = tools::ReadFile("../2023/2/input");
-    auto lines  = reader.read();
+    auto lines  = reader.readLines();
 
     for (auto&& l : lines)
     {
