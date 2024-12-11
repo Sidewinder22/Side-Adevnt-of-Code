@@ -3,7 +3,8 @@
 #include <string>
 #include <string_view>
 
-import tools;
+import filesystem;
+import numbers;
 
 int parserLine(std::string_view str)
 {
@@ -20,7 +21,7 @@ int parserLine(std::string_view str)
         }
         else
         {
-            for (auto&& digit : tools::digits)
+            for (auto&& digit : numbers::digits)
             {
                 if (substr.find(digit.first) == 0)
                 {
@@ -37,7 +38,7 @@ int parserLine(std::string_view str)
 
 int main()
 {
-    auto reader = tools::ReadFile("../2023/1/input");
+    auto reader = filesystem::ReadFile("../2023/1/input");
     auto lines  = reader.readLines();
 
     int sum = 0;
