@@ -3,7 +3,7 @@
 #include <string>
 #include <string_view>
 
-import tools;
+import filesystem;
 
 int parserLine(std::string_view str)
 {
@@ -22,7 +22,7 @@ int parserLine(std::string_view str)
 
 int main()
 {
-    auto reader = tools::ReadFile("../2023/1/input");
+    auto reader = filesystem::ReadFile("../2023/1/input");
     auto lines  = reader.readLines();
 
     int sum = 0;
