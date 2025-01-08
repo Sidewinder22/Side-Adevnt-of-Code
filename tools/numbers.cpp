@@ -2,6 +2,7 @@ module;
 
 #include <functional>
 #include <map>
+#include <regex>
 #include <string>
 #include <vector>
 
@@ -9,6 +10,8 @@ export module numbers;
 
 namespace numbers
 {
+
+std::regex numRegex(R"(\d+)");
 
 export std::map<std::string, char> digits = {
     {"one", '1'}, {"two", '2'},   {"three", '3'}, {"four", '4'}, {"five", '5'},
@@ -34,6 +37,19 @@ export bool checkOrder(const std::vector<int>& numbers, std::function<bool(int, 
     }
 
     return result;
+}
+
+export std::vector<int> extractNumbers(const std::string& str)
+{
+    std::string      strToExtract = str;
+    std::vector<int> numbers;
+    for (std::smatch numSMatch; std::regex_search(strToExtract, numSMatch, numRegex);)
+    {
+        numbers.push_back(std::stoi(numSMatch.str()));
+        strToExtract = numSMatch.suffix();
+    }
+
+    return numbers;
 }
 
 } // namespace numbers

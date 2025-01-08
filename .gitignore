@@ -130,3 +130,6 @@ dmypy.json
 
 # qtcreator
 CMakeLists.txt.user
+
+# input
+input
